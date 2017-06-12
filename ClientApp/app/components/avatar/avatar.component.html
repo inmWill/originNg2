@@ -1,0 +1,61 @@
+<h2>Avatar</h2>
+<p>This is a virtual representation of you.</p>
+<p>Name: <strong>{{ name }}</strong></p>
+<p>Age: <strong>{{ age }}</strong></p>
+<p>Level: <strong>{{ level }}</strong></p>
+<p>Height: <strong>{{ height }}</strong></p>
+<p>Weight: <strong>{{ weight }}</strong></p>
+<p>Str: <strong>{{ str }}</strong></p>
+<p>Dex: <strong>{{ dex }}</strong></p>
+<p>Con: <strong>{{ con }}</strong></p>
+<p>Int: <strong>{{ int }}</strong></p>
+<p>Wis: <strong>{{ wis }}</strong></p>
+<p>Chr: <strong>{{ chr }}</strong></p>
+<form #form="ngForm" novalidate>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" required placeholder="Name" name="name" ng-Model />
+    </div>
+
+    <label>Archetype</label>
+    <div class="radio">
+        <label>
+            <input type="radio" name="archetype" value="average" checked />
+            Average Joe
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="archetype" value="agent"  />
+            Secret Agent
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="archetype" value="scientist"  />
+            Genius Scientist
+        </label>
+    </div><div class="radio">
+        <label>
+            <input type="radio" name="archetype" value="brawler" />
+            Tough Guy
+        </label>
+    </div>
+    
+    <div class="form-group">
+        <label>Religion</label>
+        <select class="form-control">
+            <option *ngFor="let religion of religions">
+                {{ religion }}
+            </option>
+        </select>
+    </div>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="strict" ngModel />
+            Strict Reality
+        </label>
+    </div>
+    <button class="btn btn-primary" type="submit">OK</button>
+</form>
